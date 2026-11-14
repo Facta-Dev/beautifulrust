@@ -301,6 +301,23 @@ it while coding:
 
 `skills/rust-best-practices/references/` holds one digest per source for deeper lookups.
 
+## Architecture diagrams
+
+This repo ships eight [Archify](https://github.com/tt-a1i/archify) diagrams under
+[`docs/architecture/`](docs/architecture/README.md), each explorable as a standalone HTML
+page. They document the backend-rust contract this guidance is distilled from.
+
+| Diagram | What it shows |
+|---|---|
+| [c4-containers](docs/architecture/c4-containers.html) | Container view: clients → edge nginx → axum API + Postgres, OIDC provider, mail and OTLP vendors |
+| [services-slices](docs/architecture/services-slices.architecture.html) | Crate topology: composition root, feature slices, platform crates, shared kernel |
+| [auth-algorithm](docs/architecture/auth-algorithm.workflow.html) | The auth algorithm as gated steps: code, gates, token minting, refresh rotation |
+| [outbox-algorithm](docs/architecture/outbox-algorithm.workflow.html) | Durable mail delivery on the zero-broker `email_jobs` outbox: claim, send, backoff |
+| [auth-sequence](docs/architecture/auth-sequence.sequence.html) | The full auth request chain across client, API, Postgres, worker and mail vendor |
+| [outbox-sequence](docs/architecture/outbox-sequence.sequence.html) | The worker's message trace: enqueue, claim, send, retry, purge |
+| [database-dataflow](docs/architecture/database-dataflow.dataflow.html) | Where identity data goes: tables, outbox rows, delivery and ledgers |
+| [runtime-lifecycle](docs/architecture/runtime-lifecycle.lifecycle.html) | Process states: boot → wire → serve → readyz → request flow, with the drain loop |
+
 ## Layout
 
 ```
@@ -337,6 +354,9 @@ BeautifulRust/
 ├── mcp/                       MCP server (Vercel Function) at mcp.beautifulrust.dev
 ├── benchmarks/
 │   └── cross-agent-2026-10/   Claude Code vs Codex, with and without the skills
+├── docs/
+│   └── architecture/          eight Archify diagrams (C4, slices, auth,
+│                              outbox, dataflow, lifecycle) + an index
 ├── examples/
 │   └── review-inventory.md    a real review report
 ├── CHANGELOG.md
