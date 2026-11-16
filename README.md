@@ -111,6 +111,22 @@ impl Version {
 Across three test tasks (a library, a CLI, and refactoring a messy module), the skill
 passed 29 of 30 checks against 24 of 30 without it. See [Testing the skills](#testing-the-skills).
 
+## Agent kit (Claude Code)
+
+This repo carries the `{kit}` kit plane from
+[`ai-coding-playbook`](https://github.com/Facta-Dev/ai-coding-playbook):
+`.claude/agents`, `.claude/skills`, `.claude/commands`, and the
+`model-routing:ollama` block in `CLAUDE.md`.
+
+Verify or repair the wiring from the playbook checkout:
+
+```
+bash ai-coding-playbook/scripts/claude-kit/configure-repo.sh . --kit={kit} --check
+```
+
+`configure-repo.sh` is idempotent, never deletes, and backs up
+`.claude/settings.json` under `.claude/backups/` before any merge.
+
 ## Install
 
 Each skill is a folder under `skills/`: `rust-best-practices/`, `rust-review/`, and
