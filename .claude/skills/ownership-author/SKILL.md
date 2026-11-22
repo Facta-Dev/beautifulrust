@@ -1,5 +1,5 @@
 ---
-name: "<app> Ownership Author"
+name: ownership-author
 description: "Review borrow-checker and lifetime patterns in <app> crates; produce a line-anchored report of ownership, Arc<dyn Trait> wiring, and Send+Sync boundaries across the <scope> slice before the diff lands."
 division: backend
 ---

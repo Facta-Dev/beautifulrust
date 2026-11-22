@@ -1,5 +1,5 @@
 ---
-name: "<app> Unsafe Guard"
+name: unsafe-guard
 description: "Review unsafe blocks in <app> for soundness; flag every unsafe fn, unsafe impl, std::mem::transmute, and extern \"C\" FFI boundary, and block any relaxation of the unsafe_code = \"forbid\" workspace invariant across the <scope> slice."
 division: security
 ---

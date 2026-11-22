@@ -1,5 +1,5 @@
 ---
-name: "<app> Add Module"
+name: add-module
 description: "Scaffold a new workspace module (crates/<app>-<scope>) in <app>: Cargo.toml member entry, workspace.dependencies path pin, src/lib.rs module doc, hexagonal dependency direction, and the mock-port test gate, as one change."
 division: backend
 ---

@@ -1,5 +1,5 @@
 ---
-name: "<app> Add Handler"
+name: add-handler
 description: "Scaffold a new axum 0.8 handler in <app>: handler signature, extractor order, utoipa #[utoipa::path] annotation, route registration in crates/<app>-api/src/router.rs, and AppState wiring, as one change across the <scope> slice."
 division: backend
 ---
