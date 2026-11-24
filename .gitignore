@@ -8,3 +8,8 @@ CLAUDE.local.md
 .claude/backups/
 .claude/logs/
 .codegraph/
+.claude/costs.json
+graphify-out/
+__pycache__/
+*.pyc
+*.pyo
